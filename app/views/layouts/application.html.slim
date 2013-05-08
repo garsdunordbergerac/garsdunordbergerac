@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title
+      | Gars Du Nord Bergerac
+    = stylesheet_link_tag 'application', media: 'all'
+    /[if lt IE 8]
+      = stylesheet_link_tag "font-awesome-ie7.min.css", media: "all"
+    = csrf_meta_tags
+  body
+    = yield
+    script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"
+    = javascript_include_tag 'application'

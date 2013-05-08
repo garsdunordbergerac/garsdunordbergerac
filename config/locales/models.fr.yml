@@ -1,0 +1,18 @@
+fr:
+  activerecord:
+    models:
+      contact:
+        one: "Contact"
+        other: "Contacts"
+      content:
+        one: "Contenu"
+        other: "Contenus"
+      event:
+        one: "Évènement"
+        other: "Évènements"
+      summary:
+        one: "Compte rendu"
+        other: "Comptes rendu"
+      user:
+        one: "Utilisateur"
+        other: "Utilisateurs"

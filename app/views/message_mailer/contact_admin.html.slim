@@ -1,0 +1,14 @@
+p
+  |Vous avez reçu un nouveau message, envoyé depuis le site les gars du nord et de la belgique
+
+p
+  ' Email:
+  = @message.from
+
+p
+  ' Sujet:
+  = @message.subject
+
+p
+  ' Message:
+  = simple_format(h(@message.content))

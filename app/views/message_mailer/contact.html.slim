@@ -1,0 +1,13 @@
+p
+  |Bonjour,
+p
+  |Nous vous remercions d'avoir pris contact avec nous, nous reviendrons vers vous au plus vite:
+p
+  |Récapitulatif du message:
+
+p
+  'subject:
+  = @message.subject
+p
+  'contenu:
+  = simple_format(h(@message.content))

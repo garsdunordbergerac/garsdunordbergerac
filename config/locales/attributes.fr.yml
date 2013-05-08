@@ -1,0 +1,26 @@
+fr:
+  activerecord:
+    attributes:
+      contact:
+        email: 'Email'
+        name: 'Nom'
+        position: 'Fonction occupée'
+      content:
+        code: 'Code'
+        content: 'Contenu'
+      event:
+        begin_at: 'Date de début'
+        description: 'Description'
+        end_at: 'Date de fin'
+        flickr_album: "Nom de l'album Flickr"
+        place: 'Lieu'
+        title: 'Nom'
+      summary:
+        document_url: 'Lien du document'
+        happened_at: 'Date de déroulement'
+        title: 'Nom'
+      user:
+        email: "Adresse e-mail"
+        created_at: "Date de création"
+        password: "Mot de passe"
+        password_confirmation: "Confirmation du mot de passe"

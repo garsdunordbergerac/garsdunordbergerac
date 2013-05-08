@@ -1,0 +1,17 @@
+div class="contain-to-grid sticky"
+  nav class="top-bar"
+    ul class="title-area"
+      li class="name"
+        h1 = link_to('Gars du nord Bergerac', '#presentation', 'data-smooth' => '')
+      li class="toggle-topbar menu-icon"
+         = link_to('#') do
+          span Menu
+    section class="top-bar-section"
+      ul class="left"
+        li class="divider"
+        li = link_to('Évènements',     '#events',  'data-smooth' => '')
+        li class="divider"
+        li = link_to('Comptes rendus', '#summaries',  'data-smooth' => '')
+        li class="divider"
+        li = link_to('Contact',        '#contact', 'data-smooth' => '')
+        li class="divider"

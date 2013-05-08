@@ -1,0 +1,11 @@
+development:
+  adapter: mysql2
+  database: gars_du_nord_bergerac_development
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: postgresql
+  database: 
+  pool: 5
+  timeout: 5000

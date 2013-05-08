@@ -1,0 +1,9 @@
+div id="events" class="m-events"
+  div class="row"
+    div class="large-12 column"
+      h2 class="m-events--title" Les évènements
+      dl class="sub-nav m-events--years"
+        dt Année:
+        - Event.years.each_with_index do |year, index|
+          dd class="#{'active' if index == 0}" data-year="#{year}" = link_to(year, '#')
+      div class="m-events--list"

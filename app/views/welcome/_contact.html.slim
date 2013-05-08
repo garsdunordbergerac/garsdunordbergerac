@@ -1,0 +1,25 @@
+div id="contact" class="m-contact"
+  div class="row"
+    div class="large-12 column"
+      h1 contact
+  div id="m-contact--map" class="m-contact--map"
+  div class="row"
+    div class="large-4 column"
+      div class="panel m-contact--headquarters"
+        h5 class="m-contact--headquarters--title-wrapper"
+          i class="icon-home m-contact--headquarters--icon"
+          span class="m-contact--headquarters--title" Siège social
+        p Bar-tabac Le Relax
+        p 11 rue Émile-Zola
+        p 24100 Bergerac
+    div class="large-8 column"
+      form action="/messages" method="post" data-remote="true" class="custom m-contact--form"
+        select name="message[to]"
+          - Contact.all.each do |contact|
+            option value="#{contact.id}"
+              =' contact.name
+              = "(#{contact.position})"
+        input type="email" class="m-contact--form--from" name="message[from]" placeholder="Votre adresse email"
+        input type="text" class="m-contact--form--subject" name="message[subject]" placeholder="Sujet du mail"
+        textarea class="m-contact--form--content" name="message[content]" rows="10"
+        input type="submit" value="Envoyer" class="button success right"

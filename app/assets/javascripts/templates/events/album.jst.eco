@@ -1,0 +1,5 @@
+<% if @photos.length: %>
+  <% for photo in @photos: %>
+    <img src="<%= photo %>">
+  <% end %>
+<% end %>

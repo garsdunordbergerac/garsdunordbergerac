@@ -1,0 +1,19 @@
+div  class="m-presentation"
+  div class="row"
+    div class="large-12"
+      h1 class="m-presentation--title" = Content.for_code(:presentation)
+    div class="push-4 large-4 m-presentation--button-wrapper"
+      = link_to('Contactez-nous', '#contact', class: 'large button radius success', 'data-smooth' => '')
+
+    - if @next_event
+      div class="panel m-next-event"
+        div class="large-12 m-next-event--icon"
+          i class="icon-calendar"
+        h3 class="m-next-event--title" = @next_event.title
+        - if @next_event.end_at?
+          div class="m-next-event--date-range"
+            span class="m-next-event--date-range-from" = l(@next_event.begin_at)
+            | -
+            span class="m-next-event--date-range-to" = l(@next_event.end_at)
+        - else
+          div class="m-next-event--date" = l(@next_event.begin_at)
