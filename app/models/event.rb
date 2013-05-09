@@ -15,6 +15,6 @@ class Event < ActiveRecord::Base
   end
 
   def self.years
-    pluck('distinct year(begin_at)')
+    pluck('distinct extract(year from begin_at)')
   end
 end

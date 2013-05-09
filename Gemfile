@@ -5,6 +5,7 @@ gem 'rails', '3.2.13'
 gem 'cancan'
 gem 'figaro'
 gem 'devise'
+gem 'pg'
 gem 'picasa'
 gem 'rails_admin'
 gem 'simple_form'
@@ -26,9 +27,4 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'mysql2'
-end
-
-group :production do
-  gem 'pg'
 end

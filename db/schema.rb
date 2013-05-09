@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(:version => 20130508102305) do
     t.string   "place"
     t.text     "description"
     t.string   "album_title"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "rails_admin_histories", :force => true do |t|

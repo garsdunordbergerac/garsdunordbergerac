@@ -6,6 +6,6 @@ class Summary < ActiveRecord::Base
   end
 
   def self.years
-    pluck('distinct year(happened_at)')
+    pluck('distinct extract(year from happened_at)')
   end
 end
