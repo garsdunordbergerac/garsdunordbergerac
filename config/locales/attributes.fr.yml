@@ -15,6 +15,16 @@ fr:
         flickr_album: "Nom de l'album Flickr"
         place: 'Lieu'
         title: 'Nom'
+      headquarter:
+        city: 'Ville'
+        latitude: 'Latitude'
+        longitude: 'Longitude'
+        title: 'Nom'
+        postcode: 'Code postal'
+        street: 'Rue'
+      number:
+        code: 'Code'
+        value: 'Valeur'
       summary:
         document_url: 'Lien du document'
         happened_at: 'Date de déroulement'
