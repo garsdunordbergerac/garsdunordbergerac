@@ -1,10 +1,14 @@
 class Event < ActiveRecord::Base
-  attr_accessible :begin_at,
+  attr_accessible :album_title,
+                  :begin_at,
                   :description,
                   :end_at,
-                  :album_title,
                   :place,
                   :title
+
+  validates :begin_at, presence: true
+  validates :place,    presence: true
+  validates :title,    presence: true
 
   def self.for_year(year)
     where('begin_at between ? and ?', Date.new(year, 1, 1), Date.new(year, 12, 31))
