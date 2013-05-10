@@ -105,6 +105,7 @@ GEM
     multi_json (1.7.3)
     multi_xml (0.5.3)
     nested_form (0.3.2)
+    newrelic_rpm (3.6.2.96)
     nokogiri (1.5.9)
     orm_adapter (0.4.0)
     pg (0.15.1)
@@ -208,6 +209,7 @@ DEPENDENCIES
   figaro
   font-awesome-rails
   jquery-rails
+  newrelic_rpm
   pg
   picasa
   rails (= 3.2.13)
