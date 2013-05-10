@@ -1,0 +1,17 @@
+div class="row"
+  div class="push-3 large-6"
+    h1
+      | Administration
+
+div class="row"
+  div class="push-3 large-6"
+    - if flash[:alert]
+      div class="alert-box alert"
+        = flash[:alert]
+
+    = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |form|
+      = form.input :email,    required: false, autofocus: true
+      = form.input :password, required: false
+
+      div class="form-actions"
+        = form.button :submit, 'Se connecter', class: 'right'
