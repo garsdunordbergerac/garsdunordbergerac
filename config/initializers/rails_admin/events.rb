@@ -12,7 +12,7 @@ RailsAdmin.config do |config|
 
     edit do
       field :title
-      field :flickr_album
+      field :album_title
       field :description
       field :place
       field :begin_at
