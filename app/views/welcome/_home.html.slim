@@ -1,0 +1,19 @@
+div  class="m-home"
+  div class="row"
+    div class="large-12"
+      h1 class="m-home--title" = @json[:contents]['accueil']
+    div class="push-4 large-4 m-accueil--button-wrapper"
+      = link_to('En savoir plus', '#about-us', class: 'large button radius success', 'data-smooth' => '')
+
+    - if @json[:next_event]
+      div class="panel m-next-event"
+        div class="large-12 m-next-event--icon"
+          i class="icon-calendar"
+        h3 class="m-next-event--title" = @json[:next_event][:title]
+        - if @json[:next_event][:end_at]
+          div class="m-next-event--date-range"
+            span class="m-next-event--date-range-from" = l(@json[:next_event][:begin_at])
+            | -
+            span class="m-next-event--date-range-to" = l(@json[:next_event][:end_at])
+        - else
+          div class="m-next-event--date" = l(@json[:next_event][:begin_at])

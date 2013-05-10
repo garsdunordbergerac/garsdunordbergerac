@@ -1,0 +1,33 @@
+div id="about-us" class="m-about_us"
+  div class="row"
+    div class="large-12 columns"
+      h1 Qui sommes-nous?
+
+  div class="row"
+    div class="push-8 large-4 columns"
+      div class="panel m-about_us--numbers"
+        h3 class="m-about_us--numbers--title" Quelques chiffres
+        ul class="m-about_us--numbers--list"
+          li class="m-about_us--number"
+            i class="icon-calendar m-about_us--number--icon"
+            | créée le #{@json[:numbers]['creation']}
+          li class="m-about_us--number"
+            i class="icon-group m-about_us--number--icon"
+            | #{@json[:numbers]['people_count']} personnes
+          li class="m-about_us--number"
+            i class="icon-glass m-about_us--number--icon"
+            | #{@json[:numbers]['meeting_count']} manifestations / an
+          li class="m-about_us--number"
+            i class="icon-beer m-about_us--number--icon"
+            | 2L / personnes / manifestation
+
+    div class="pull-4 large-8 columns"
+      = @json[:contents]['qui-sommes-nous']
+
+    div class="large-12 columns"
+      h3 Pas encore convaincu?
+      = @json[:contents]['pas-encore-convaincu']
+
+    a class="large-12 columns panel" href=""
+      i class="icon-heart"
+      | Envie de nous rejoindre? Téléchargez le formulaire d'adhésion

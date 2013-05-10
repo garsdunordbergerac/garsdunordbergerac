@@ -4,6 +4,6 @@ div id="summaries" class="m-summaries"
       h2 class="m-summaries--title" Les Comptes rendus
       dl class="sub-nav m-summaries--years"
         dt Année:
-        - Summary.years.each_with_index do |year, index|
+        - @json[:summary_years].each_with_index do |year, index|
           dd class="#{'active' if index == 0}" data-year="#{year}" = link_to(year, '#')
       div class="m-summaries--list"

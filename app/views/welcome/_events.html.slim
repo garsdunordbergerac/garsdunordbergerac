@@ -4,6 +4,6 @@ div id="events" class="m-events"
       h2 class="m-events--title" Les évènements
       dl class="sub-nav m-events--years"
         dt Année:
-        - Event.years.each do |year|
-          dd class="#{'active' if current_event_year(Event.years).to_s == year.to_s}" data-year="#{year}" = link_to(year, '#')
+        - @json[:event_years].each do |year|
+          dd class="#{'active' if current_event_year(@json[:event_years]).to_s == year.to_s}" data-year="#{year}" = link_to(year, '#')
       div class="m-events--list"

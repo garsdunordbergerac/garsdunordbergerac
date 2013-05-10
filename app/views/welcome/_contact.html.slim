@@ -1,17 +1,17 @@
 div id="contact" class="m-contact"
   div class="row"
     div class="large-12 column"
-      h1 contact
+      h1 Contact
   div id="m-contact--map" class="m-contact--map"
   div class="row"
     div class="large-4 column"
-      div class="panel m-contact--headquarters"
+      div class="panel m-contact--headquarters" data-latitude="#{@json[:headquarter][:latitude]}" data-longitude="#{@json[:headquarter][:longitude]}"
         h5 class="m-contact--headquarters--title-wrapper"
           i class="icon-home m-contact--headquarters--icon"
           span class="m-contact--headquarters--title" Siège social
-        p Bar-tabac Le Relax
-        p 11 rue Émile-Zola
-        p 24100 Bergerac
+        p = @json[:headquarter][:title]
+        p = @json[:headquarter][:street]
+        p = "#{@json[:headquarter][:postcode]} #{@json[:headquarter][:city]}"
     div class="large-8 column"
       form action="/messages" method="post" data-remote="true" class="custom m-contact--form"
         select name="message[to]"
