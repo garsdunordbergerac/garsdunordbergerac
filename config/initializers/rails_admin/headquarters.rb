@@ -1,5 +1,5 @@
 RailsAdmin.config do |config|
-  config.model Event do
+  config.model Headquarter do
     list do
       items_per_page 100
       sort_by :title
