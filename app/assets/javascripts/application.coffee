@@ -5,6 +5,7 @@
 #= require jquery.carouFredSel
 #= require foundation
 
+#= require about_us
 #= require contact_form
 #= require contact_map
 #= require events

@@ -27,8 +27,9 @@ class Events
       if json.photos
         $(".m-event[data-id='#{json.event_id}'] .m-event--photos").hide()
         $(".m-event[data-id='#{json.event_id}'] .m-event--photos").html(JST['templates/events/album'](photos: json.photos))
-        $(".m-event[data-id='#{json.event_id}'] .m-event--photos").fadeIn()
-        $(".m-event[data-id='#{json.event_id}'] .m-event--photos").carouFredSel()
+        $(".m-event[data-id='#{json.event_id}'] .m-event--photos").fadeIn(complete: ->
+          $(".m-event[data-id='#{json.event_id}'] .m-event--photos").carouFredSel()
+        )
     )
 
   startCarousel: ->

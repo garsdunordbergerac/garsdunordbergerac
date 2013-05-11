@@ -1,0 +1,5 @@
+<% if @photos.length: %>
+  <% for photo in @photos: %>
+    <img src="<%= photo %>" class="m-about_us--photos--photo">
+  <% end %>
+<% end %>
