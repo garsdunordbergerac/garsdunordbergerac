@@ -4,8 +4,9 @@ class ContactMap
 
     map    = new google.maps.Map(document.getElementById('m-contact--map'), @mapOptions())
     marker = new google.maps.Marker({
-      position: @place()
+      icon:     '/assets/marker.png'
       map:      map
+      position: @place()
       title:    headquarter.data('title')
     })
 
