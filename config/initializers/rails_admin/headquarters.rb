@@ -7,14 +7,14 @@ RailsAdmin.config do |config|
 
       field :title
       field :street
-      field :post_code
+      field :postcode
       field :city
     end
 
     edit do
       field :title
       field :street
-      field :post_code
+      field :postcode
       field :city
       field :latitude
       field :longitude
