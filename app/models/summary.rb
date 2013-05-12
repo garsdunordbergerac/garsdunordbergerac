@@ -9,6 +9,6 @@ class Summary < ActiveRecord::Base
   end
 
   def self.years
-    pluck('distinct extract(year from happened_at)')
+    order(:year).pluck('distinct extract(year from happened_at) as year')
   end
 end

@@ -32,4 +32,36 @@ describe Event do
       end
     end
   end
+
+  describe '.next' do
+    before(:each) { Date.stub(:today).and_return(Date.new(1985, 10, 5)) }
+
+    context 'when there is no future events' do
+      it 'returns nil' do
+        FactoryGirl.create(:event, begin_at: Date.new(1985, 5, 9))
+
+        Event.next.should == nil
+      end
+    end
+
+    context 'when a future event exists' do
+      it 'returns the earliest event' do
+        expected_event = FactoryGirl.create(:event, begin_at: Date.new(1985, 10, 8))
+        FactoryGirl.create(:event, begin_at: Date.new(1985, 10, 9))
+
+        Event.next.should == expected_event
+      end
+    end
+  end
+
+  describe '.years' do
+    it 'returns all unique years sorted' do
+      FactoryGirl.create(:event, begin_at: Date.new(1992))
+      FactoryGirl.create(:event, begin_at: Date.new(1980))
+      FactoryGirl.create(:event, begin_at: Date.new(1998))
+      FactoryGirl.create(:event, begin_at: Date.new(1998))
+
+      Event.years.should == ['1980', '1992', '1998']
+    end
+  end
 end

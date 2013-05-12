@@ -6,5 +6,5 @@ class Headquarter < ActiveRecord::Base
   validates :longitude, presence: true
   validates :postcode,  presence: true
   validates :street,    presence: true
-  validates :title,    presence: true
+  validates :title,     presence: true
 end

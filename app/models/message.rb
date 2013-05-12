@@ -21,7 +21,7 @@ class Message
   end
 
   def to_user
-    Contact.find(self.to)
+    Contact.find_by_id(self.to)
   end
 
 private

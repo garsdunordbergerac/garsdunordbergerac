@@ -1,5 +1,9 @@
 describe Content do
+  it { should allow_mass_assignment_of(:code) }
+  it { should allow_mass_assignment_of(:content) }
+
   it { should validate_presence_of(:code) }
+  it { should validate_uniqueness_of(:code) }
 
   describe '.for_code' do
     before(:each) do
