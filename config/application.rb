@@ -68,6 +68,5 @@ module GarsDuNordBergerac
       enable_starttls_auto: ENV['EMAIL_TLS']
     }
     config.assets.initialize_on_precompile = false
-
   end
 end

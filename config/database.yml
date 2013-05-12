@@ -1,7 +1,13 @@
-development:
+default: &default
   adapter: postgresql
-  database: gars_du_nord_bergerac_development
   username: kdisneur
   pool: 5
   timeout: 5000
 
+development:
+  <<: *default
+  database: gars_du_nord_bergerac_development
+
+test:
+  <<: *default
+  database: gars_du_nord_bergerac_test
