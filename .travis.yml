@@ -12,6 +12,7 @@ after_success:
   - heroku keys:clear
   - yes | heroku keys:add
   - yes | git push heroku master
+  - if git log ${TRAVIS_COMMIT_RANGE} | grep -E '\[migrations\]'; then heroku run rake db:migrate --app garsdunordbergerac-org; fi
 env:
   global:
     - secure: "mEQxuygRqX4XhypXZ+rwl8IxNO5+60tv+ll/OQh3hGNg6GIJASrtnJe2U/q9\nAP5WhAUzkdkNrSv6DJFiAmcy3Mz9jlvLKQDWGny9ENCge47b5TKbzG27IFhh\nlG7Mfwb0R0yX4X9lAnq4pRHVp9+awNIN6QTI5zBNnObfw57UFsk="
