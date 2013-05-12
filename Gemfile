@@ -36,4 +36,6 @@ group :development, :test do
   gem 'forgery'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'spork'
+  gem 'watchr'
 end
