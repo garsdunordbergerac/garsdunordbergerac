@@ -13,7 +13,6 @@ private
       :contents,
       :numbers,
       :event_years,
-      :summary_years,
       :contacts,
       :headquarter
     ].reduce({}) { |hash, method_name| hash.merge(send(method_name)) }
@@ -78,9 +77,5 @@ private
     end
 
     json
-  end
-
-  def summary_years
-    { summary_years: Summary.years }
   end
 end

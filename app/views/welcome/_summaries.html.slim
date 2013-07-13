@@ -1,9 +1,0 @@
-div id="summaries" class="m-summaries"
-  div class="row"
-    div class="large-12 column"
-      h2 class="m-summaries--title" Les Comptes rendus
-      dl class="sub-nav m-summaries--years"
-        dt Année:
-        - @json[:summary_years].each_with_index do |year, index|
-          dd class="#{'active' if index == 0}" data-year="#{year}" = link_to(year, '#')
-      div class="m-summaries--list"
