@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  analytical
   protect_from_forgery
 
   if ENV['BASIC_AUTHENTICATION_USER'] && ENV['BASIC_AUTHENTICATION_PASSWORD']

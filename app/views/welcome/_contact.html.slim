@@ -14,7 +14,7 @@ div id="contact" class="m-contact"
         p = "#{@json[:headquarter][:postcode]} #{@json[:headquarter][:city]}"
     div class="large-8 column"
       form action="/messages" method="post" data-remote="true" class="custom m-contact--form"
-        select name="message[to]"
+        select name="message[to]" class="m-contact--form--to"
           - Contact.all.each do |contact|
             option value="#{contact.id}"
               =' contact.name

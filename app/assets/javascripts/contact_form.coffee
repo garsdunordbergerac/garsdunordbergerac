@@ -1,3 +1,5 @@
+#= require templates/contact/success.jst.eco
+#
 class ContactForm
 
   constructor: ->
@@ -8,6 +10,7 @@ class ContactForm
 
   analyzeResult: (data) ->
     if data.errors == undefined
+      Analytical.event('Contact the association', { contact: $('.m-contact--form--to :selected').text() })
       $('.m-contact--form').html(JST['templates/contact/success']())
     else
       for attribute, messages of data.errors

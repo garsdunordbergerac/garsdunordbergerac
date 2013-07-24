@@ -9,6 +9,7 @@
 #= require contact_form
 #= require contact_map
 #= require events
+#= require home
 
 window.onload = ->
   $(document).foundation()

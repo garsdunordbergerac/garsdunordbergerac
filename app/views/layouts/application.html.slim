@@ -1,13 +1,17 @@
 doctype html
 html
   head
+    == analytical.head_prepend_javascript
     title
       | Gars du Nord et de la Belgique Bergerac
     = stylesheet_link_tag 'application', media: 'all'
     /[if lt IE 8]
       = stylesheet_link_tag "font-awesome-ie7.min.css", media: "all"
     = csrf_meta_tags
+    == analytical.head_append_javascript
   body
+    == analytical.body_prepend_javascript
     = yield
     script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"
     = javascript_include_tag 'application'
+    == analytical.body_append_javascript
