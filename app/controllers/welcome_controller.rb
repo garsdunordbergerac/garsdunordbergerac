@@ -34,7 +34,7 @@ private
   def contents
     json = { contents: {} }
     Content.all.each do |content|
-      json[:contents][content.code] = simple_format(CGI.escapeHTML(content.content))
+      json[:contents][content.code] = content.content.html_safe
     end
 
     json

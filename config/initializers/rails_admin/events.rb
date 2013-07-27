@@ -13,7 +13,9 @@ RailsAdmin.config do |config|
     edit do
       field :title
       field :album_title
-      field :description
+      field :description, :text do
+        ckeditor true
+      end
       field :place
       field :begin_at
       field :end_at

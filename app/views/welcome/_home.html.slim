@@ -1,8 +1,10 @@
-div  class="m-home"
+div  class="m-home" id="home"
   div class="row"
     div class="large-12"
+      = image_tag('home/logo.jpeg', width: '150px', class: 'm-home--logo')
+    div class="large-12"
       h1 class="m-home--title" = @json[:contents]['accueil']
-    div class="push-4 large-4 m-accueil--button-wrapper"
+    div class="push-4 large-4 m-home--button-wrapper"
       = link_to('En savoir plus', '#about-us', class: 'large button radius success m-home--about-us-button', 'data-smooth' => '')
 
     - if @json[:next_event]
