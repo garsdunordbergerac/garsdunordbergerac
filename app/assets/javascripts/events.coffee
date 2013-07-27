@@ -50,6 +50,9 @@ class Events
       loopRewind:      true,
       navigateByClick: false,
       sliderDrag:      false
-    })
+    }).data('royalSlider').ev.on('rsAfterSlideChange', (event) ->
+      photos = event.target.currSlide.holder.find('.m-event--photos')
+      photos.carouFredSel() if photos
+    )
 
 $(-> new Events().load())

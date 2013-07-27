@@ -13,4 +13,4 @@
 
 window.onload = ->
   $(document).foundation()
-  $('a[data-smooth]').smoothScroll(offset: -45, easing: 'swing', speed: 800)
+  $('a[data-smooth]').smoothScroll(offset: -45, easing: 'swing', speed: 800, afterScroll: (event)-> $(event.scrollTarget).trigger('scrollEnter'))
