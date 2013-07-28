@@ -20,10 +20,10 @@ describe Event do
     end
 
     context 'when there is events for this year' do
-      it 'returns the events' do
+      it 'returns the events sorted in reverse chronological order' do
         expected_events = []
-        expected_events << FactoryGirl.create(:event, begin_at: Date.new(1981, 4, 11))
         expected_events << FactoryGirl.create(:event, begin_at: Date.new(1981, 6, 3))
+        expected_events << FactoryGirl.create(:event, begin_at: Date.new(1981, 4, 11))
 
         FactoryGirl.create(:event, begin_at: Date.new(1980, 8, 1))
         FactoryGirl.create(:event, begin_at: Date.new(1982, 2, 9))

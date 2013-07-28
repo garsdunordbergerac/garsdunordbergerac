@@ -1,8 +1,7 @@
 #= require jquery
 #= require jquery_ujs
-#= require jquery.royalslider
+#= require jquery.flexslider
 #= require jquery.smooth-scroll
-#= require jquery.carouFredSel
 #= require foundation
 
 #= require about_us

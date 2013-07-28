@@ -11,7 +11,7 @@ class Event < ActiveRecord::Base
   validates :title,    presence: true
 
   def self.for_year(year)
-    where('begin_at between ? and ?', Date.new(year, 1, 1), Date.new(year, 12, 31))
+    where('begin_at between ? and ?', Date.new(year, 1, 1), Date.new(year, 12, 31)).order('begin_at DESC')
   end
 
   def self.next

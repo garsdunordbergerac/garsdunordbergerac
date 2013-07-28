@@ -1,5 +1,7 @@
 <% if @photos.length: %>
-  <% for photo in @photos: %>
-    <img src="<%= photo %>">
-  <% end %>
+  <ul class="slides">
+    <% for photo in @photos: %>
+      <li class="m-event--photos--photo-container"><img src="<%= photo %>" class="m-event--photos--photo"></li>
+    <% end %>
+  </ul>
 <% end %>

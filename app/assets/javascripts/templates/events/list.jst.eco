@@ -1,41 +1,43 @@
 <% if @events.length: %>
-  <div class="royalSlider rsDefault">
+  <div class="section-container vertical-tabs" data-section="vertical-tabs">
     <% for event in @events: %>
-      <div class="rsContent">
-        <div class="rsTmb">
+      <section class="m-event" data-id="<%= event.id %>">
+        <a class="title" data-section-title>
           <h5><%= event.title %></h5>
           <% if event.end_at == '': %>
             <span><%= event.begin_at %> - <%= event.end_at %></span>
           <% else: %>
             <span><%= event.begin_at %></span>
           <% end %>
-        </div>
-        <div class="row m-event" data-id="<%= event.id %>">
-          <div class="large-12 column">
-            <h3 class="m-event--title"><%= event.title %></h3>
-          </div>
-          <div class="large-12 column">
-            <span class="m-event--date">
-              <i class="icon-calendar m-event--date--icon"></i>
-              <% if event.end_at: %>
-                <%= event.begin_at %> - <%= event.end_at %>
-              <% else: %>
-                <%= event.begin_at %>
-              <% end %>
-            </span>
-            <% if event.place: %>
-              <span class="m-event--place">
-                <i class="icon-flag m-event--place--icon"></i>
-                <%= event.place %>
+        </a>
+        <div class="content" data-section="">
+          <div class="row">
+            <div class="large-12 column">
+              <h3 class="m-event--title"><%= event.title %></h3>
+            </div>
+            <div class="large-12 column">
+              <span class="m-event--date">
+                <i class="icon-calendar m-event--date--icon"></i>
+                <% if event.end_at: %>
+                  <%= event.begin_at %> - <%= event.end_at %>
+                <% else: %>
+                  <%= event.begin_at %>
+                <% end %>
               </span>
-            <% end %>
+              <% if event.place: %>
+                <span class="m-event--place">
+                  <i class="icon-flag m-event--place--icon"></i>
+                  <%= event.place %>
+                </span>
+              <% end %>
+            </div>
+            <div class="large-12 column m-event--description">
+              <%- event.description %>
+            </div>
+            <div class="large-12 column m-event--photos"></div>
           </div>
-          <div class="large-12 column m-event--description">
-            <%- event.description %>
-          </div>
-          <div class="m-event--photos"></div>
         </div>
-      </div>
+      </section>
     <% end %>
   </div>
 <% end %>

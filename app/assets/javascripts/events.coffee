@@ -18,41 +18,17 @@ class Events
     year = $('.m-events--years .active').data('year')
     $.get("/events?year=#{year}", (events)=>
       $('.m-events--list').html(JST['templates/events/list'](events: events))
-      @startCarousel()
+      $('.m-events--list .section-container').foundation('section')
       @loadPhotosForEvent(event) for event in events
     )
 
-  loadPhotosForEvent: (event) ->
-    $.get("/albums/#{event.id}", (json) ->
+  loadPhotosForEvent: (event) =>
+    $.get("/albums/#{event.id}", (json) =>
       if json.photos
         $(".m-event[data-id='#{json.event_id}'] .m-event--photos").hide()
         $(".m-event[data-id='#{json.event_id}'] .m-event--photos").html(JST['templates/events/album'](photos: json.photos))
-        $(".m-event[data-id='#{json.event_id}'] .m-event--photos").fadeIn(complete: ->
-          $(".m-event[data-id='#{json.event_id}'] .m-event--photos").carouFredSel()
-        )
-    )
-
-  startCarousel: ->
-    $('.m-events--list .royalSlider').royalSlider({
-      arrowsNav:                false,
-      fadeinLoadedSlide:        true,
-      controlNavigationSpacing: 0,
-      controlNavigation:        'thumbnails',
-      thumbs: {
-        autoCenter:    false,
-        fitInViewport: true,
-        orientation:   'vertical',
-        spacing:       0,
-        paddingBottom: 0
-      },
-      slidesSpacing:   0,
-      loop:            false,
-      loopRewind:      true,
-      navigateByClick: false,
-      sliderDrag:      false
-    }).data('royalSlider').ev.on('rsAfterSlideChange', (event) ->
-      photos = event.target.currSlide.holder.find('.m-event--photos')
-      photos.carouFredSel() if photos
+        $(".m-event[data-id='#{json.event_id}'] .m-event--photos").show()
+        $(".m-event[data-id='#{json.event_id}'] .m-event--photos").flexslider()
     )
 
 $(-> new Events().load())

@@ -1,5 +1,7 @@
 <% if @photos.length: %>
-  <% for photo in @photos: %>
-    <img src="<%= photo %>" class="m-about_us--photos--photo">
-  <% end %>
+  <ul class="slides">
+    <% for photo in @photos: %>
+      <li class="m-about_us--photos--photo-container"><img src="<%= photo %>" class="m-about_us--photos--photo"></li>
+    <% end %>
+  </ul>
 <% end %>
