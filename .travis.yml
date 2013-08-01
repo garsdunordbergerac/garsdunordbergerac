@@ -18,4 +18,5 @@ deploy:
   app: garsdunordbergerac-org
   on:
     repo: garsdunordbergerac/garsdunordbergerac
-  run: "if git log ${TRAVIS_COMMIT_RANGE} | grep '[migrations]'; then rake db:migrate; fi"
+  run:
+    - 'rake db:migrate'
