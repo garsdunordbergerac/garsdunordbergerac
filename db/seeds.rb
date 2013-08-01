@@ -46,13 +46,6 @@ Number.create([
 
 
 
-Summary.create([
-  { :title => "Loto", :happened_at => "2013-03-16", :document_url => "https://docs.google.com/file/d/0B0EaiD90Vpj0ckRPSzVOTGd0dFU/edit?usp=sharing", :created_at => "2013-05-09 08:17:54", :updated_at => "2013-05-09 08:17:54" },
-  { :title => "Compte rendu de réunion", :happened_at => "2013-01-07", :document_url => "https://docs.google.com/file/d/0B0EaiD90Vpj0elZfTXNKRVpQM0U/edit?usp=sharing", :created_at => "2013-05-09 08:17:54", :updated_at => "2013-05-09 08:17:54" }
-], :without_protection => true )
-
-
-
 User.create([
   { :email => "admin@garsdunordbergerac.org", :encrypted_password => "$2a$10$xELv5Z8zI67oJ2veB1BXp.NJVFez4U29saZMEZJqKK0ytSxdoje0O", :reset_password_token => nil, :reset_password_sent_at => nil, :remember_created_at => nil, :sign_in_count => 2, :current_sign_in_at => "2013-05-10 18:46:20", :last_sign_in_at => "2013-05-10 07:33:25", :current_sign_in_ip => "127.0.0.1", :last_sign_in_ip => "127.0.0.1", :created_at => "2013-05-09 08:17:54", :updated_at => "2013-05-10 18:46:20" }
 ], :without_protection => true )
