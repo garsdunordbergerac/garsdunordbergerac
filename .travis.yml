@@ -1,25 +1,20 @@
 before_script:
-  - "cp config/database-ci.yml config/database.yml"
-  - "psql -c 'create database gars_du_nord_bergerac_test;' -U postgres"
-  - "sh -c 'bundle install && bundle exec rake db:create db:migrate'"
-after_success:
-  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-  - git remote add heroku git@heroku.com:garsdunordbergerac-org.git
-  - echo 'Host heroku.com' >> ~/.ssh/config
-  - echo '   StrictHostKeyChecking no' >> ~/.ssh/config
-  - echo '   CheckHostIP no' >> ~/.ssh/config
-  - echo '   UserKnownHostsFile=/dev/null' >> ~/.ssh/config
-  - heroku keys:clear
-  - yes | heroku keys:add
-  - yes | git push heroku master
-  - if git log ${TRAVIS_COMMIT_RANGE} | grep -E '\[migrations\]'; then heroku run rake db:migrate --app garsdunordbergerac-org; fi
+  - cp config/database-ci.yml config/database.yml
+  - psql -c 'create database gars_du_nord_bergerac_test;' -U postgres
+  - sh -c 'bundle install && bundle exec rake db:create db:migrate'
 env:
   global:
-    - secure: "mEQxuygRqX4XhypXZ+rwl8IxNO5+60tv+ll/OQh3hGNg6GIJASrtnJe2U/q9\nAP5WhAUzkdkNrSv6DJFiAmcy3Mz9jlvLKQDWGny9ENCge47b5TKbzG27IFhh\nlG7Mfwb0R0yX4X9lAnq4pRHVp9+awNIN6QTI5zBNnObfw57UFsk="
     - DB=postgresql
 git:
   submodules: false
 language: ruby
 rvm:
   - 1.9.3
-script: 'bundle exec rspec spec'
+script: bundle exec rspec spec
+deploy:
+  provider: heroku
+  api_key:
+    secure: VPK7TbB9Wlx0Y++K+p1TmEpLNvk3gJtouTvK7VCq39gN4p6Thjm2uiiblPlfttMauKbN1gTJzbr7daGz2MCgwFwvZ8Cg1syCH39m5ORfFiGG4XvorGyt5rMq2Hf6zc7YXymXUz1QMiNZ2KNijBcRPdEg+iaQh9OCit2Ta9gYKeU=
+  app: garsdunordbergerac-org
+  on:
+    repo: garsdunordbergerac/garsdunordbergerac
