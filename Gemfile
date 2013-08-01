@@ -4,6 +4,7 @@ gem 'rails', '3.2.13'
 
 gem 'analytical'
 gem 'cancan'
+gem 'coveralls', require: false
 gem 'ckeditor'
 gem 'devise'
 gem 'figaro'
