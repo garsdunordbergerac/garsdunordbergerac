@@ -27,7 +27,7 @@ describe Message do
 
     context 'when the contact exists' do
       it 'returns a Contact by its id stored in the "to" field' do
-        expected_contact = mock
+        expected_contact = double
         Contact.stub(:find_by_id).with(42).and_return(expected_contact)
 
         message.to = 42

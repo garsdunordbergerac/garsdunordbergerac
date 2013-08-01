@@ -23,8 +23,8 @@ describe EventsController do
 
     it 'formats events descriptions to use HTML characters' do
       events = []
-      events << mock(description: 'ma description')
-      events << mock(description: 'ma description 2')
+      events << double(description: 'ma description')
+      events << double(description: 'ma description 2')
       events.each do |event|
         event.stub(:description=)
         events_controller.should_receive(:format_description).with(event.description)
@@ -35,7 +35,7 @@ describe EventsController do
     end
 
     it 'renders events' do
-      events = mock
+      events = double
       Event.stub_chain(:for_year, :each).and_return(events)
       events_controller.should_receive(:render).with(json: events)
 

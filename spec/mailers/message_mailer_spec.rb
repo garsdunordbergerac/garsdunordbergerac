@@ -5,13 +5,13 @@ require 'spec_helper'
 describe MessageMailer do
   let(:message_mailer) { MessageMailer.send(:new) }
   let(:contact) do
-    contact = mock
+    contact = double
     contact.stub(:email).and_return('to@test.com')
 
     contact
   end
   let(:message) do
-    message = mock
+    message = double
     message.stub(:from).and_return('from@test.com')
     message.stub(:to_user).and_return(contact)
     message.stub(:subject).and_return('awesome subject')

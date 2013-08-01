@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe MessagesController do
   let(:message) do
-    message = mock
+    message = double
     message
   end
 

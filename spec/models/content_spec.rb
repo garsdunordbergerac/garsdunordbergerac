@@ -7,10 +7,10 @@ describe Content do
 
   describe '.for_code' do
     before(:each) do
-      content_mock = mock('content')
-      content_mock.stub(:content).and_return('my content')
+      content_double = double('content')
+      content_double.stub(:content).and_return('my content')
       Content.stub(:where).and_return([])
-      Content.stub(:where).with(code: :awesome_code).and_return([content_mock])
+      Content.stub(:where).with(code: :awesome_code).and_return([content_double])
     end
 
     context 'when content exists' do
