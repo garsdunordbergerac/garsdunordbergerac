@@ -17,8 +17,8 @@ after_success:
   - heroku keys:remove deploy@travis-ci.org
 env:
   global:
-    - secure: "mEQxuygRqX4XhypXZ+rwl8IxNO5+60tv+ll/OQh3hGNg6GIJASrtnJe2U/q9\nAP5WhAUzkdkNrSv6DJFiAmcy3Mz9jlvLKQDWGny9ENCge47b5TKbzG27IFhh\nlG7Mfwb0R0yX4X9lAnq4pRHVp9+awNIN6QTI5zBNnObfw57UFsk="
-    - secure: "TOExOMj3yObj2eoxYM2i57QZnGHWa89QDxdp8uQAVAcMkfSeqWNjQdWsjoJ4rZm8pnfnnaf0fdZC4k3RiXjmPbC4/qYS6V4+MCCC4XwS0Lhp4uxdZHBXbcuuzUwIEGrjHTj3pj9PnNcxJU2AXxdIdBzvSzfdi6yWgG6q9X7YQX4="
+    - secure: "TdaYODk89LPbFPAtdrxgMAk522x35L+ihH5l+E7IU7V85nlymTsPvs0dIXlzXchPLEzR69kxP+7jxt1uCsru7F6w1IjYvZsKxJecgohxxbtgRjPhUXB308VlNEJY5Gjivd6oB6kP5JmfpSEzxX4OnyIuTjP2jGVXj50SNm54Cuo="
+    - secure: "ZVRNE+075gDr6qbJeEo9vJ1oHmvo7TjJtFAbUHgSH5IhMYs4W2B8lW/o4HsCb6H0BQEWrSXIsK84o5U692L2A8jrwQ42PuVugCclSWmDE0LkiT8g10gZAj/jn3iqdJ4TBDnd/d75yxp0nPx5q76m9civJFNDBTp/L+NlU86h7HQ="
     - DB=postgresql
 git:
   submodules: false
