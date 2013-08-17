@@ -4,15 +4,9 @@ class EventsController < ApplicationController
   respond_to :json
 
   def index
-    year   = params[:year].to_i
-    events = Event.for_year(year).each { |event| event.description = format_description(event.description) }
+    year    = params[:year].to_i
+    @events = Event.for_year(year)
 
-    render json: events
-  end
-
-private
-
-  def format_description(description)
-    simple_format(CGI.escapeHTML(description))
+    render 'events/index'
   end
 end
