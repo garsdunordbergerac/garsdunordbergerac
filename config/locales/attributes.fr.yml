@@ -12,7 +12,7 @@ fr:
         begin_at: 'Date de début'
         description: 'Description'
         end_at: 'Date de fin'
-        flickr_album: "Nom de l'album Flickr"
+        album_title: "Nom de l'album Picasa"
         place: 'Lieu'
         title: 'Nom'
       headquarter:

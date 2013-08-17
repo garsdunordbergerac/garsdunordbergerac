@@ -7,6 +7,7 @@ gem 'cancan'
 gem 'coveralls', require: false
 gem 'ckeditor'
 gem 'devise'
+gem 'devise-i18n'
 gem 'figaro'
 gem 'newrelic_rpm'
 gem 'pg'

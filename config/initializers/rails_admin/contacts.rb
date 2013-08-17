@@ -5,14 +5,15 @@ RailsAdmin.config do |config|
       sort_by :created_at
 
       field :name
-      field :email
       field :position
+      field :email
     end
 
     edit do
       field :name
-      field :email
       field :position
+      field :email
+      field :phone
     end
   end
 end

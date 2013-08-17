@@ -12,13 +12,13 @@ RailsAdmin.config do |config|
 
     edit do
       field :title
+      field :place
+      field :begin_at
+      field :end_at
       field :album_title
       field :description, :text do
         ckeditor true
       end
-      field :place
-      field :begin_at
-      field :end_at
     end
   end
 end
