@@ -10,6 +10,8 @@ class ContactMap
       title:    headquarter.data('title')
     })
 
+    google.maps.event.addDomListener(window, 'resize', => map.setCenter(@place()))
+
   mapOptions: ->
     styles: @stylesOptions()
     zoom:   16
