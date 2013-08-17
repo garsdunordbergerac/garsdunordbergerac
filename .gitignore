@@ -19,3 +19,4 @@
 /config/application.yml
 /coverage
 /config/database.yml
+public/assets

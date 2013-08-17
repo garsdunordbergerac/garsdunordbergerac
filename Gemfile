@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 
 gem 'analytical'
+gem 'asset_sync'
 gem 'cancan'
 gem 'coveralls', require: false
 gem 'ckeditor'
