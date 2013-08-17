@@ -12,14 +12,30 @@ div id="contact" class="m-contact"
         p = @json[:headquarter][:title]
         p = @json[:headquarter][:street]
         p = "#{@json[:headquarter][:postcode]} #{@json[:headquarter][:city]}"
-    div class="large-8 column"
-      form action="/messages" method="post" data-remote="true" class="custom m-contact--form"
-        select name="message[to]" class="m-contact--form--to"
-          - Contact.all.each do |contact|
-            option value="#{contact.id}"
-              =' contact.name
-              = "(#{contact.position})"
-        input type="email" class="m-contact--form--from" name="message[from]" placeholder="Votre adresse email"
-        input type="text" class="m-contact--form--subject" name="message[subject]" placeholder="Sujet du mail"
-        textarea class="m-contact--form--content" name="message[content]" rows="10"
-        input type="submit" value="Envoyer" class="button success right"
+    div class="large-8 column m-contact--people"
+      - Contact.all.in_groups_of(2, false) do |contacts|
+        div class="row"
+          - contacts.each do |contact|
+            div class="large-6 column"
+              div class="panel m-contact--person"
+                h5 class="m-contact--person--title-wrapper"
+                  span class="m-contact--person--title" = contact.position
+                div class="m-contact--person--field"
+                  div class="small-2 large-2 columns"
+                    i class="icon-male m-contact--person--icon"
+                  div class="small-10 large-10 columns"
+                    = contact.name
+                - if contact.phone
+                  div class="m-contact--person--field"
+                    div class="small-2 large-2 columns"
+                      i class="icon-phone m-contact--person--icon"
+                    div class="small-10 large-10 columns"
+                      = contact.phone
+                div class="m-contact--person--field"
+                  div class="small-2 large-2 columns"
+                    i class="icon-envelope m-contact--person--icon"
+                  div class="small-10 large-10 columns"
+                    = contact.email
+                div class="row"
+                  div class="large-12 columns m-contact--person--button-wrapper"
+                    = mail_to(contact.email, 'Envoyer un email', class: 'button success radius m-contact--person--button')

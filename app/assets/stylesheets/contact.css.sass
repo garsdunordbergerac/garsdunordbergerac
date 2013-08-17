@@ -3,24 +3,31 @@
 .m-contact
   +page
 
-.m-contact--headquarters,.m-contact--form
+.m-contact--headquarters,.m-contact--people
   margin-top: 2em
 
-.m-contact--form
-  textarea
-    height: auto
-
-.m-contact--form--success
-  font-weight: normal
-  text-align:  center
-
-.m-contact--headquarters--icon
+.m-contact--headquarters--icon,
   color:         $main-color-darken
   font-size:     3em
+  padding-right: 2px 0 0 10px
+
+.m-contact--person--icon
+  color:         $main-color-darken
   padding-right: 10px
 
-.m-contact--headquarters--title
+.m-contact--headquarters--title, .m-contact--person--title
   font-size: 1.5em
+
+.m-contact--person--field
+  +grid-row
+  line-height: 2em
+
+.m-contact--person--button-wrapper
+  text-align: center
+
+.m-contact--person--button
+  display:    inline-block
+  margin-top: 2em
 
 .m-contact--map
   height: 400px
