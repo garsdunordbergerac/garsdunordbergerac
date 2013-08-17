@@ -12,7 +12,10 @@
 .m-event
   &.active
     @media only screen and (max-width:"#{$small-screen}")
+      background:     #f0f0f0
       border-bottom:  1px solid $main-color-darken
+      .m-event--content
+        background: transparent !important
     .title
       h5
         color: #fff
@@ -26,6 +29,9 @@
     span
       color:     #ddd
       font-size: 0.8em
+
+.m-event--content
+  padding-top: 0 !important
 
 .m-event--title
   margin-bottom: 0
