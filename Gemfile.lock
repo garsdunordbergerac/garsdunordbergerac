@@ -128,6 +128,8 @@ GEM
     picasa (0.6.7)
       httparty
     polyglot (0.3.3)
+    rabl (0.8.6)
+      activesupport (>= 2.3.14)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -257,6 +259,7 @@ DEPENDENCIES
   newrelic_rpm
   pg
   picasa
+  rabl
   rails (= 3.2.13)
   rails_admin
   rspec-rails
