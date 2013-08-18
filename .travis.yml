@@ -1,28 +1,23 @@
 before_script:
-  - cp config/database-ci.yml config/database.yml
-  - psql -c 'create database gars_du_nord_bergerac_test;' -U postgres
-  - sh -c 'bundle install && bundle exec rake db:create db:migrate'
-after_success:
-  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-  - git remote add heroku git@heroku.com:${HEROKU_APP}.git
-  - ssh-keygen -t rsa -C 'deploy@travis-ci.org' -f ~/.ssh/travis -N ''
-  - echo 'Host heroku.com' >> ~/.ssh/config
-  - echo '   IdentityFile ~/.ssh/travis' >> ~/.ssh/config
-  - echo '   StrictHostKeyChecking no' >> ~/.ssh/config
-  - echo '   CheckHostIP no' >> ~/.ssh/config
-  - echo '   UserKnownHostsFile=/dev/null' >> ~/.ssh/config
-  - yes | heroku keys:add ~/.ssh/travis.pub
-  - yes | git push heroku master
-  - if git log ${TRAVIS_COMMIT_RANGE} | grep -E '\[migrations\]'; then heroku run rake db:migrate --app ${HEROKU_APP}; fi
-  - heroku keys:remove deploy@travis-ci.org
+- cp config/database-ci.yml config/database.yml
+- psql -c 'create database gars_du_nord_bergerac_test;' -U postgres
+- sh -c 'bundle install && bundle exec rake db:create db:migrate'
 env:
   global:
-    - secure: "TdaYODk89LPbFPAtdrxgMAk522x35L+ihH5l+E7IU7V85nlymTsPvs0dIXlzXchPLEzR69kxP+7jxt1uCsru7F6w1IjYvZsKxJecgohxxbtgRjPhUXB308VlNEJY5Gjivd6oB6kP5JmfpSEzxX4OnyIuTjP2jGVXj50SNm54Cuo="
-    - secure: "ZVRNE+075gDr6qbJeEo9vJ1oHmvo7TjJtFAbUHgSH5IhMYs4W2B8lW/o4HsCb6H0BQEWrSXIsK84o5U692L2A8jrwQ42PuVugCclSWmDE0LkiT8g10gZAj/jn3iqdJ4TBDnd/d75yxp0nPx5q76m9civJFNDBTp/L+NlU86h7HQ="
-    - DB=postgresql
+  - DB=postgresql
 git:
   submodules: false
 language: ruby
 rvm:
-  - 1.9.3
+- 1.9.3
 script: bundle exec rspec spec
+deploy:
+  provider: heroku
+  api_key:
+    secure: O1+4B3uMLnbgZC15YeEOfhMURWJaMj8i6YpTtem5kXDOgnDc4XWXK55qzgF1B7k5lZTivXdm9r1qYW6EZUjl2FmHapOOUUSACn1xZtY/hDwhbQ3c0dfzx28BbM4Peu65fgYfEgMG9Uf3pH4FtPoCvMbZq0Zsf56qIfbvGn4JN1Q=
+  app: garsdunordbergerac-org
+  on:
+    repo: garsdunordbergerac/web
+  strategy: git
+  run:
+    - "rake db:migrate"
