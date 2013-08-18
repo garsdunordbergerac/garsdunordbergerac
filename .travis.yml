@@ -1,15 +1,15 @@
 before_script:
-- cp config/database-ci.yml config/database.yml
-- psql -c 'create database gars_du_nord_bergerac_test;' -U postgres
-- sh -c 'bundle install && bundle exec rake db:create db:migrate'
+  - cp config/database-ci.yml config/database.yml
+  - psql -c 'create database gars_du_nord_bergerac_test;' -U postgres
+  - sh -c 'bundle install && bundle exec rake db:create db:migrate'
 env:
   global:
-  - DB=postgresql
+    - DB=postgresql
 git:
   submodules: false
 language: ruby
 rvm:
-- 1.9.3
+  - 1.9.3
 script: bundle exec rspec spec
 deploy:
   provider: heroku
@@ -20,4 +20,4 @@ deploy:
     repo: garsdunordbergerac/web
   strategy: git
   run:
-    - "rake db:migrate"
+    - 'rake db:migrate'
