@@ -16,14 +16,14 @@ class Events
 
   loadEventsForYear: ->
     year = $('.m-events--years .active').data('year')
-    $.get("/events?year=#{year}", (events)=>
+    $.get("/events.json?year=#{year}", (events)=>
       $('.m-events--list').html(JST['templates/events/list'](events: events))
       $('.m-events--list .section-container').foundation('section')
       @loadPhotosForEvent(event) for event in events
     )
 
   loadPhotosForEvent: (event) =>
-    $.get("/albums/#{event.id}", (json) =>
+    $.get("/albums/#{event.id}.json", (json) =>
       if json.photos
         $(".m-event[data-id='#{json.event_id}'] .m-event--photos").hide()
         $(".m-event[data-id='#{json.event_id}'] .m-event--photos").html(JST['templates/events/album'](photos: json.photos))
