@@ -4,7 +4,7 @@ class AlbumsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     if @event.album_title?
-      client         = Picasa::Client.new(user_id: ENV['ALBUM_USER_ID'], password: ENV['ALBUM_USER_PASSWORD'])
+      client         = Picasa::Client.new(user_id: ENV['ALBUM_USER_ID'])
       album          = client.album.list.entries.find { |album| album.title == @event.album_title }
       @album_entries = client.album.show(album.id).entries
 
