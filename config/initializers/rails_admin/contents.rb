@@ -10,9 +10,7 @@ RailsAdmin.config do |config|
 
     edit do
       field :code
-      field :content, :text do
-        ckeditor true
-      end
+      field :content, :ck_editor
     end
   end
 end

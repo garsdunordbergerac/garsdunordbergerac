@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  username: kdisneur
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: gars_du_nord_bergerac_development
+
+test:
+  <<: *default
+  database: gars_du_nord_bergerac_test
+
+production:
+  adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] %>
