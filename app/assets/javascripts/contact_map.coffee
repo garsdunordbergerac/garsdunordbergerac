@@ -1,10 +1,11 @@
 class ContactMap
   load: ->
     headquarter = $('.m-contact--headquarters')
+    mapElement = document.getElementById('m-contact--map')
 
-    map    = new google.maps.Map(document.getElementById('m-contact--map'), @mapOptions())
+    map    = new google.maps.Map(mapElement, @mapOptions())
     marker = new google.maps.Marker({
-      icon:     '/assets/marker.png'
+      icon:     $(mapElement).data('marker-image')
       map:      map
       position: @place()
       title:    headquarter.data('title')
