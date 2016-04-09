@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
+ruby '2.3.0'
 
 gem 'rails', '4.2.6'
 
 gem 'analytical'
-gem 'asset_sync'
 gem 'cancan'
 gem 'coveralls', require: false
 gem 'ckeditor'
@@ -16,6 +16,7 @@ gem 'pg'
 gem 'protected_attributes'
 gem 'rabl'
 gem 'rails_admin'
+gem 'rails_12factor'
 gem 'seed_dump'
 gem 'simple_form'
 gem 'slim'
