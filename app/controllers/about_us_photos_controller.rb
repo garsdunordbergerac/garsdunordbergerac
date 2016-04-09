@@ -2,9 +2,8 @@ class AboutUsPhotosController < ApplicationController
   respond_to :json
 
   def index
-      client = Picasa::Client.new(user_id: ENV['ALBUM_USER_ID'])
-      album  = client.album.list.entries.find { |album| album.title == 'a-propos' }
+    album_entries = FetchPhotosByAlbum.new('72157665938468690').call
 
-      render json: { photos: client.album.show(album.id).entries.map { |entry| entry.content.src }}
+    render json: { photos: album_entries }
   end
 end
