@@ -19,6 +19,6 @@ class Event < ActiveRecord::Base
   end
 
   def self.years
-    order('year').pluck('distinct cast(extract(year from begin_at) as bigint) as year')
+    order('year desc').pluck('distinct cast(extract(year from begin_at) as bigint) as year')
   end
 end
